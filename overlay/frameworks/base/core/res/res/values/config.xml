@@ -300,7 +300,7 @@
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
-<<<<<<< HEAD
+
    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
    in hardware. -->
    <bool name="config_setColorTransformAccelerated">true</bool>
@@ -320,6 +320,8 @@
    <!-- Should the pinner service pin the Camera application? -->
    <bool name="config_pinnerCameraApp">true</bool>
 =======
+=======
+>>>>>>> 79428b9... potter: Fix LineageActions and overlays for non lineage based roms
     <!-- Paths to the libraries that contain device specific key handlers -->
     <string name="config_deviceKeyHandlerLib" translatable="false">/system/priv-app/LineageActions/LineageActions.apk</string>
 
@@ -355,6 +357,5 @@
     <!-- Support in Surfaceflinger for blur layers.
          NOTE: This requires additional hardware-specific code. -->
     <!--<bool name="config_uiBlurEnabled">true</bool>-->
->>>>>>> 79428b9... potter: Fix LineageActions and overlays for non lineage based roms
 
 </resources>
