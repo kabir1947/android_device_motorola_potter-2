@@ -28,7 +28,7 @@ import com.android.server.LocalServices;
 import com.android.server.display.DisplayTransformManager;
 import static com.android.server.display.DisplayTransformManager.LEVEL_COLOR_MATRIX_NIGHT_DISPLAY;
 
-import org.lineageos.internal.util.FileUtils;
+import org.mokee.internal.util.FileUtils;
 
 public class DisplayColorCalibration {
 

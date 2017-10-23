@@ -17,7 +17,7 @@
 
 package org.lineageos.hardware;
 
-import vendor.lineage.livedisplay.V1_0.Feature;
+import vendor.mokee.livedisplay.V1_0.Feature;
 
 /**
  * Color balance support

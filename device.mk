@@ -234,7 +234,7 @@ PRODUCT_PACKAGES += \
 
 # Display Calibration
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-sdm
+    vendor.mokee.livedisplay@1.0-service-sdm
 
 # DRM
 PRODUCT_PACKAGES += \

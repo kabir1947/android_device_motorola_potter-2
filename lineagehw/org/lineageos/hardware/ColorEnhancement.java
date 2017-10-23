@@ -16,7 +16,7 @@
 
 package org.lineageos.hardware;
 
-import org.lineageos.internal.util.FileUtils;
+import org.mokee.internal.util.FileUtils;
 
 import android.util.Log;
 
