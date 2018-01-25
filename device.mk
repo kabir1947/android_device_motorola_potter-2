@@ -295,6 +295,10 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
     power.msm8953
 
+# Qualcomm
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.qcom.fm.sh \
