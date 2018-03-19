@@ -27,10 +27,10 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
 
-
 import com.moto.actions.util.FileUtils;
 import com.moto.actions.actions.Constants;
 import com.moto.actions.ServiceWrapper.LocalBinder;
+
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     static final String TAG = "MotoActions";
