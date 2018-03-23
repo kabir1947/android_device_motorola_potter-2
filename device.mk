@@ -101,7 +101,8 @@ PRODUCT_PACKAGES += \
 
 # Browser
 PRODUCT_PACKAGES += \
-    Gello
+    Gello \
+    Via
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -110,8 +111,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
     libshim_camera_hal \
-    libshims_camera \
-    Snap
+    libshims_camera
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8953_mot_potter_camera.xml:system/etc/camera/msm8953_mot_potter_camera.xml \
@@ -402,7 +402,8 @@ PRODUCT_PACKAGES += \
 
 # Launcher3
 PRODUCT_PACKAGES += \
-    Launcher3
+    Launcher3 \
+    Launcher
 
 #Thermal
 PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
@@ -442,6 +443,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
+
+#MiXplorer
+PRODUCT_PACKAGES += \
+   MiXplorer
+
+#Music Player
+PRODUCT_PACKAGES += \
+  RetroMusic
+
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
