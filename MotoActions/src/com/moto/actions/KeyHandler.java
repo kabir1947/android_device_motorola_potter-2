@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.settings.device;
+package com.moto.actions;
 
 import android.app.ActivityManager;
 import android.app.ActivityManagerNative;
@@ -64,11 +64,11 @@ import android.widget.Toast;
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 
-import com.dirtyunicorns.settings.device.util.FileUtils;
+import com.moto.actions.util.FileUtils;
 
 import java.util.List;
 
-import static com.dirtyunicorns.settings.device.actions.Constants.*;
+import static com.moto.actions.actions.Constants.*;
 
 public class KeyHandler implements DeviceKeyHandler {
 
@@ -207,23 +207,6 @@ public class KeyHandler implements DeviceKeyHandler {
             MediaSessionLegacyHelper.getHelper(context).sendMediaButtonEvent(event, true);
             event = KeyEvent.changeAction(event, KeyEvent.ACTION_UP);
             MediaSessionLegacyHelper.getHelper(context).sendMediaButtonEvent(event, true);
-        }
-    }
-
-    private boolean isInLockTaskMode() {
-        try {
-            return ActivityManagerNative.getDefault().isInLockTaskMode();
-        } catch (RemoteException e) {
-            // ignore
-        }
-        return false;
-    }
-
-    private void exitScreenPinningMode() {
-        try {
-            ActivityManagerNative.getDefault().stopSystemLockTaskMode();
-        } catch (RemoteException e) {
-            // ignore
         }
     }
 
@@ -581,12 +564,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 }
                 break;
             case FP_HOLD_SCANCODE:
-                if (isInLockTaskMode()){
-                    doHapticFeedbackFP(false);
-                    exitScreenPinningMode();
-                }else{
-                    action = str2int(FileUtils.readOneLine(getFPNodeBasedOnScreenState(FP_KEY_HOLD_NODE)));
-                }
+                action = str2int(FileUtils.readOneLine(getFPNodeBasedOnScreenState(FP_KEY_HOLD_NODE)));
                 break;
             case FP_RIGHT_SCANCODE:
                 action = str2int(FileUtils.readOneLine(getFPNodeBasedOnScreenState(FP_KEY_RIGHT_NODE)));
@@ -608,14 +586,11 @@ public class KeyHandler implements DeviceKeyHandler {
             isHapticFeedbackEnabledOnFP = false;
         }
         if (isHapticFeedbackEnabledOnFP){
-            if (!isInLockTaskMode() && (action == ACTION_CAMERA || action == ACTION_FLASHLIGHT)) {
+            if (action == ACTION_CAMERA || action == ACTION_FLASHLIGHT) {
                 vibrate(action == ACTION_CAMERA ? 500 : 250);
-            }else if (isInLockTaskMode() || action != ACTION_VOICE_ASSISTANT) {
+            }else if (action != ACTION_VOICE_ASSISTANT) {
                 doHapticFeedbackFP(false);
             }
-        }
-        if (isInLockTaskMode() && (action == ACTION_HOME || action == ACTION_RECENTS || action == ACTION_VOICE_ASSISTANT || action == ACTION_CAMERA || action == ACTION_LAST_APP)) {
-            return;
         }
         switch (action) {
             case ACTION_HOME:
@@ -688,8 +663,8 @@ public class KeyHandler implements DeviceKeyHandler {
         if (ai != null && !ai.supportsPictureInPicture()) {
             try {
                 PackageManager pm = mContext.getPackageManager();
-                Resources resources = pm.getResourcesForApplication("com.dirtyunicorns.settings.device");
-                int resId = resources.getIdentifier("app_does_not_support_pip", "string", "com.dirtyunicorns.settings.device");
+                Resources resources = pm.getResourcesForApplication("com.moto.actions");
+                int resId = resources.getIdentifier("app_does_not_support_pip", "string", "com.moto.actions");
                 final String text = resources.getString(resId);
                 mHandler.post(new Runnable() {
                     public void run() {
