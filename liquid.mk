@@ -30,6 +30,7 @@ PRODUCT_DEVICE := potter
 PRODUCT_NAME := liquid_potter
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
+PRODUCT_MODEL := XT1686
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 
