@@ -31,5 +31,7 @@ PRODUCT_NAME := liquid_potter
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
 
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto G5 Plus"
