@@ -48,6 +48,13 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void property_override_dual(char const system_prop[], char const vendor_prop[],
+    char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void num_sims() {
     std::string dualsim;
 
@@ -68,13 +75,13 @@ void vendor_load_properties()
     if (platform != ANDROID_TARGET)
         return;
 
+    // sku
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
+    property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
 
     // fingerprint
     property_override("ro.build.description", "potter-7.0/NPNS25.137-33-11/11:user/release-keys");
-    property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
-
-    property_set("ro.product.model", sku.c_str());
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "motorola/potter/potter:7.0/NPNS25.137-33-11/11:user/release-keys");
 
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
