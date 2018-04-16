@@ -1,0 +1,21 @@
+[
+  {
+    "remote": "github",
+    "repository":  "rrajesh011/android_device_motorola_potter",
+    "target_path": "device/motorola/potter",
+    "branch": "lr-o8.1"
+  },
+  {
+    "remote": "github",
+    "repository":  "attack11/android_kernel_motorola_msm8953",
+    "target_path": "kernel/motorola/msm8953",
+    "branch": "Extendedboost5"
+  },
+  {
+    "remote": "gh",
+    "repository": "boulzordev/android_vendor_motorola_potter",
+    "target_path": "vendor/motorola/potter",
+    "branch": "lineage-15.1-64"
+  }
+]
+
