@@ -12,7 +12,7 @@
     "branch": "Extendedboost5"
   },
   {
-    "remote": "gh",
+    "remote": "github",
     "repository": "boulzordev/android_vendor_motorola_potter",
     "target_path": "vendor/motorola/potter",
     "branch": "lineage-15.1-64"
