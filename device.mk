@@ -134,6 +134,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MotoActions
 
+#DeskClock
+PRODUCT_PACKAGES += \
+    DeskClock
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8953 \
