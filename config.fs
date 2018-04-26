@@ -13,11 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-[AID_RFS]
-value:2951
+#[AID_RFS]
+#value:2951
 
-[AID_RFS_SHARED]
-value:2952
+#[AID_RFS_SHARED]
+#value:2952
 
 [system/vendor/bin/wcnss_filter]
 mode: 0755

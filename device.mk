@@ -131,8 +131,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/cacert_location.pem:system/vendor/etc/cacert_location.pem
 
 # MotoActions
-PRODUCT_PACKAGES += \
-    MotoActions
+#PRODUCT_PACKAGES += \
+   # MotoActions
 
 # Display
 PRODUCT_PACKAGES += \
@@ -299,7 +299,9 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service-qti
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl \
+    power.msm8953
 
 # Qualcomm
 PRODUCT_COPY_FILES += \
