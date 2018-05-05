@@ -67,8 +67,11 @@ import org.lineageos.settings.device.util.FileUtils;
 
 import java.util.List;
 
+<<<<<<< HEAD
 //import lineageos.providers.LineageSettings;
 
+=======
+>>>>>>> 3afa007053455cd9d2a3a6db177bd788737335f7
 import static org.lineageos.settings.device.actions.Constants.*;
 
 public class KeyHandler implements DeviceKeyHandler {
@@ -151,9 +154,15 @@ public class KeyHandler implements DeviceKeyHandler {
 
         final Resources resources = mContext.getResources();
         mProximityTimeOut = resources.getInteger(
+<<<<<<< HEAD
                 org.mokee.platform.internal.R.integer.config_proximityCheckTimeout);
         mProximityWakeSupported = resources.getBoolean(
                 org.mokee.platform.internal.R.bool.config_proximityCheckOnWake);
+=======
+                com.android.internal.R.integer.config_proximityCheckTimeout);
+        mProximityWakeSupported = resources.getBoolean(
+                com.android.internal.R.bool.config_proximityCheckOnWake);
+>>>>>>> 3afa007053455cd9d2a3a6db177bd788737335f7
 
         if (mProximityWakeSupported) {
             mSensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
@@ -703,9 +712,15 @@ public class KeyHandler implements DeviceKeyHandler {
             Message msg = mFPScreenOffGesturesHandler.obtainMessage(FP_ACTION_REQUEST);
             msg.arg1 = scanCode;
             boolean defaultProximity = mContext.getResources().getBoolean(
+<<<<<<< HEAD
                     org.mokee.platform.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
             boolean proximityWakeCheckEnabled = LineageActionsSettings.System.getInt(mContext.getContentResolver(),
                     LineageActionsSettings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
+=======
+                    com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+            boolean proximityWakeCheckEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
+>>>>>>> 3afa007053455cd9d2a3a6db177bd788737335f7
             if (mProximityWakeSupported && proximityWakeCheckEnabled && mProximitySensor != null) {
                 mFPScreenOffGesturesHandler.sendMessageDelayed(msg, mProximityTimeOut);
                 registerFPScreenOffListener(scanCode);
@@ -766,7 +781,11 @@ public class KeyHandler implements DeviceKeyHandler {
             Message msg = mScreenOffGesturesHandler.obtainMessage(GESTURE_REQUEST);
             msg.arg1 = scanCode;
             boolean defaultProximity = mContext.getResources().getBoolean(
+<<<<<<< HEAD
                     org.mokee.platform.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+=======
+                    com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+>>>>>>> 3afa007053455cd9d2a3a6db177bd788737335f7
             boolean proximityWakeCheckEnabled = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.PROXIMITY_ON_WAKE, defaultProximity ? 1 : 0) == 1;
             if (mProximityWakeSupported && proximityWakeCheckEnabled && mProximitySensor != null) {

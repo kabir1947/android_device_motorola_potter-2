@@ -13,8 +13,12 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v14-preference \
     android-support-v7-appcompat \
     android-support-v7-preference \
+<<<<<<< HEAD
     android-support-v7-recyclerview \
     org.mokee.platform.internal
+=======
+    android-support-v7-recyclerview
+>>>>>>> 3afa007053455cd9d2a3a6db177bd788737335f7
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
